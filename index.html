@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Landing Page With Hover Effects Using Only HTML & CSS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        body {
+            font-family: 'Italiana', sans-serif;
+            background-color: #000000e4;
+            overflow: hidden;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+        }
+
+        .navbar-links {
+            display: flex;
+            column-gap: 20px;
+        }
+
+        .navbar-links a {
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        .navbar h1 {
+            color: white;
+            margin: 0;
+            font-size: 2em;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .navbar-icons {
+            display: flex;
+            align-items: center;
+            column-gap: 20px;
+        }
+
+        .navbar-icons a {
+            color: rgb(255, 255, 255);
+            font-size: 1.5em;
+        }
+
+        .navbar-icons a:hover {
+            color: #ffffff;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 4px 0;
+            transition: 0.4s;
+        }
+
+        .navbar-links-mobile {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            background-color: #333;
+            position: absolute;
+            top: 60px;
+            right: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .navbar-links-mobile a {
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            text-align: center;
+            width: 100%;
+            display: block;
+        }
+
+        .navbar-links-mobile a:hover {
+            background-color: #555;
+        }
+
+        @media (max-width: 700px) {
+            .navbar-links, .navbar-icons {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: nowrap;
+            height: 100vh;
+        }
+
+        .content .item {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            transition: all ease 1s 0.1s;
+        }
+
+        .content .item img {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+        }
+
+        .content .item:hover {
+            width: 300%;
+        }
+
+        .content .item:hover .text {
+            bottom: 200px;
+        }
+
+        .content .item:hover .text h5 {
+            opacity: 1;
+        }
+
+        .text {
+            position: absolute;
+            bottom: 150px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            transition: all ease 1s 0.1s;
+        }
+
+        .text h4 {
+            font-size: 150px;
+            color: #ffffff;
+            font-weight: normal;
+            box-shadow: #151017e4;
+        }
+
+        .text h5 {
+            font-size: 22px;
+            color: #fff;
+            font-weight: normal;
+            text-transform: uppercase;
+            opacity: 0;
+            transition: all ease 0.5s 0.5s;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html"></a>
+        <h1>IMAGINE FABRICS</h1>
+    
+    <!-- Anchor tag around Navbar -->
+    <a href="index.html"></a>
+        <div class="navbar-links">
+            <p class="navbar-link"><a href="index.html">HOME</a></p>
+            <p class="navbar-link"><a href="bride.html">BRIDE</a></p>
+            <p class="navbar-link"><a href="collection.html">WOMEN</a></p>
+            <p class="navbar-link"><a href="trending.html">KIDS</a></p>
+            <p class="navbar-link"><a href="contact.html">CONTACT</a></p>
+        </div>
+        <div class="navbar-icons">
+            <a href="#"><i class="fas fa-shopping-cart"></i></a>
+            <!-- Anchor tag around login icon -->
+    <a href="log.html">
+        <i class="fas fa-user"></i>
+    </a>
+    <a href="track.html"><i class="fa-solid fa-truck-fast"></i></a>
+    <!-- Anchor tag around truck icon -->
+     <a href="fasttruck.html"></a>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    
+
+
+    <div class="navbar-links-mobile" id="mobile-links">
+        <a href="index.html">HOME</a>
+        <a href="bride.html">BRIDE</a>
+        <a href="collection.html">WOMEN</a>
+        <a href="trending.html">KIDS</a>
+        <a href="contact.html">CONTACT</a>
+    </div>
+
+    <main>
+        <div class="content">
+            <div class="item">
+                <div class="text">
+                    <h4>I</h4>
+                    <h5>ICONIC</h5>
+                </div>
+                <img src="7.jpg" alt="">
+            </div>
+            <div class="item">
+                <div class="text">
+                    <h4>M</h4>
+                    <h5>MAGICAL</h5>
+                </div>
+                <img src="6.jpg" alt="">
+            </div>
+            <div class="item">
+                <div class="text">
+                    <h4>A</h4>
+                    <h5>ATTRACTION</h5>
+                </div>
+                <img src="5.jpg" alt="">
+            </div>
+            <div class="item">
+                <div class="text">
+                    <h4>G</h4>
+                    <h5>Glow</h5>
+                </div>
+                <img src="4.jpg" alt="">
+            </div>
+            <div class="item">
+                <div class="text">
+                    <h4>I</h4>
+                    <h5>INVENTIVE</h5>
+                </div>
+                <img src="3.jpg" alt="">
+            </div>
+            <div class="item">
+                <div class="text">
+                    <h4>N</h4>
+                    <h5>NATURAL</h5>
+                </div>
+                <img src="2.jpg" alt="">
+            </div>
+            <div class="item">
+                <div class="text">
+                    <h4>E</h4>
+                    <h5>ELEGANT</h5>
+                </div>
+                <img src="1.jpg" alt="">
+            </div>
+        </div>
+    </main>
+
+
+    <script>
+        document.getElementById('mobile-menu').addEventListener('click', function() {
+            const mobileLinks = document.getElementById('mobile-links');
+            if (mobileLinks.style.display === 'flex') {
+                mobileLinks.style.display = 'none';
+            } else {
+                mobileLinks.style.display = 'flex';
+            }
+        });
+    </script>
+</body>
+</html>
